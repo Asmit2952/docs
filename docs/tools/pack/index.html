@@ -228,8 +228,16 @@
 </li>
   </ul>
 </li>
+<li data-nav-id="/docs/features/" class="dd-item depth-0 haschildren">
+  <a href="/docs/features/">Features</a>
+  <ul class="ml-2">
+<li data-nav-id="/docs/features/reproducibility/" class="dd-item depth-1 collapse">
+  <a href="/docs/features/reproducibility/">Reproducibility</a>
+</li>
+  </ul>
+</li>
 <li data-nav-id="/docs/app-developer-guide/" class="dd-item depth-0 haschildren">
-  <a href="/docs/app-developer-guide/">App Developer&rsquo;s Guide</a>
+  <a href="/docs/app-developer-guide/">App Developer Guide</a>
   <ul class="ml-2">
 <li data-nav-id="/docs/app-developer-guide/build-an-app/" class="dd-item depth-1">
   <a href="/docs/app-developer-guide/build-an-app/">Build an app</a>
@@ -255,10 +263,13 @@
 <li data-nav-id="/docs/app-developer-guide/using-project-descriptor/" class="dd-item depth-1">
   <a href="/docs/app-developer-guide/using-project-descriptor/">Using project.toml</a>
 </li>
+<li data-nav-id="/docs/app-developer-guide/using-inline-buildpacks/" class="dd-item depth-1">
+  <a href="/docs/app-developer-guide/using-inline-buildpacks/">Using Inline Buildpacks</a>
+</li>
   </ul>
 </li>
 <li data-nav-id="/docs/buildpack-author-guide/" class="dd-item depth-0 haschildren">
-  <a href="/docs/buildpack-author-guide/">Buildpack Author&rsquo;s Guide</a>
+  <a href="/docs/buildpack-author-guide/">Buildpack Author Guide</a>
   <ul class="ml-2">
 <li data-nav-id="/docs/buildpack-author-guide/create-buildpack/" class="dd-item depth-1 haschildren">
   <a href="/docs/buildpack-author-guide/create-buildpack/">Create a buildpack</a>
@@ -304,13 +315,26 @@
   </ul>
 </li>
 <li data-nav-id="/docs/operator-guide/" class="dd-item depth-0 haschildren">
-  <a href="/docs/operator-guide/">Operator&rsquo;s Guide</a>
+  <a href="/docs/operator-guide/">Operator Guide</a>
   <ul class="ml-2">
 <li data-nav-id="/docs/operator-guide/create-a-builder/" class="dd-item depth-1">
   <a href="/docs/operator-guide/create-a-builder/">Create a builder</a>
 </li>
 <li data-nav-id="/docs/operator-guide/create-a-stack/" class="dd-item depth-1">
   <a href="/docs/operator-guide/create-a-stack/">Create a stack</a>
+</li>
+  </ul>
+</li>
+<li data-nav-id="/docs/platform-guide/" class="dd-item depth-0 haschildren">
+  <a href="/docs/platform-guide/">Platform Guide</a>
+  <ul class="ml-2">
+<li data-nav-id="/docs/platform-guide/conventions/" class="dd-item depth-1 haschildren">
+  <a href="/docs/platform-guide/conventions/">Conventions</a>
+  <ul class="ml-2">
+<li data-nav-id="/docs/platform-guide/conventions/source-metadata/" class="dd-item depth-2 collapse">
+  <a href="/docs/platform-guide/conventions/source-metadata/">Source Metadata</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -492,9 +516,6 @@
 </li>
   </ul>
 </li>
-<li data-nav-id="/docs/reference/reproducibility/" class="dd-item depth-1 collapse">
-  <a href="/docs/reference/reproducibility/">Reproducible Builds</a>
-</li>
 <li data-nav-id="/docs/reference/spec/" class="dd-item depth-1 collapse haschildren">
   <a href="/docs/reference/spec/">Specification</a>
   <ul class="ml-2">
@@ -570,7 +591,7 @@
 <hr>
 <h2 id="pack-cli"><code>pack</code> CLI</h2>
 <h3 id="install">Install</h3>
-<p>You can install the most recent version of the <code>pack</code> CLI (version <strong>0.20.0</strong>) on the following operating systems:</p>
+<p>You can install the most recent version of the <code>pack</code> CLI (version <strong>0.21.0</strong>) on the following operating systems:</p>
 
 
 
@@ -653,7 +674,7 @@
 </li>
 <li>Use a version tag to pin a specific release:
 <ul>
-<li><code>buildpacksio/pack:0.20.0</code></li>
+<li><code>buildpacksio/pack:0.21.0</code></li>
 <li><a href="https://hub.docker.com/r/buildpacksio/pack/tags">other versions</a></li>
 </ul>
 </li>
@@ -692,7 +713,7 @@ sudo apt-get install pack-cli
               
               <div class="tab-pane px-3 fade " id="linux-script-install">
                 <p>The following command will download the latest version of <code>pack</code> from <a href="https://github.com/buildpacks/pack/releases">GitHub</a> and install it in <code>/usr/local/bin/</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>curl -sSL <span class="s2">&#34;https://github.com/buildpacks/pack/releases/download/v0.20.0/pack-v0.20.0-linux.tgz&#34;</span> <span class="p">|</span> sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack<span class="o">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>curl -sSL <span class="s2">&#34;https://github.com/buildpacks/pack/releases/download/v0.21.0/pack-v0.21.0-linux.tgz&#34;</span> <span class="p">|</span> sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack<span class="o">)</span>
 </code></pre></div>
               </div>
             
@@ -750,7 +771,7 @@ sudo apt-get install pack-cli
 </li>
 <li>Use a version tag to pin a specific release:
 <ul>
-<li><code>buildpacksio/pack:0.20.0</code></li>
+<li><code>buildpacksio/pack:0.21.0</code></li>
 <li><a href="https://hub.docker.com/r/buildpacksio/pack/tags">other versions</a></li>
 </ul>
 </li>
@@ -824,7 +845,7 @@ sudo apt-get install pack-cli
               
               <div class="tab-pane px-3 fade active in show" id="windows-chocolatey">
                 <p>To install <code>pack</code> on Windows, we recommend using <a href="https://chocolatey.org/">Chocolatey</a>:</p>
-<pre><code>choco install pack --version=0.20.0
+<pre><code>choco install pack --version=0.21.0
 </code></pre>
               </div>
             
@@ -841,7 +862,7 @@ sudo apt-get install pack-cli
 </li>
 <li>Use a version tag to pin a specific release:
 <ul>
-<li><code>buildpacksio/pack:0.20.0</code></li>
+<li><code>buildpacksio/pack:0.21.0</code></li>
 <li><a href="https://hub.docker.com/r/buildpacksio/pack/tags">other versions</a></li>
 </ul>
 </li>

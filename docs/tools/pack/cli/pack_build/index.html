@@ -226,8 +226,16 @@
 </li>
   </ul>
 </li>
+<li data-nav-id="/docs/features/" class="dd-item depth-0 haschildren">
+  <a href="/docs/features/">Features</a>
+  <ul class="ml-2">
+<li data-nav-id="/docs/features/reproducibility/" class="dd-item depth-1 collapse">
+  <a href="/docs/features/reproducibility/">Reproducibility</a>
+</li>
+  </ul>
+</li>
 <li data-nav-id="/docs/app-developer-guide/" class="dd-item depth-0 haschildren">
-  <a href="/docs/app-developer-guide/">App Developer&rsquo;s Guide</a>
+  <a href="/docs/app-developer-guide/">App Developer Guide</a>
   <ul class="ml-2">
 <li data-nav-id="/docs/app-developer-guide/build-an-app/" class="dd-item depth-1">
   <a href="/docs/app-developer-guide/build-an-app/">Build an app</a>
@@ -253,10 +261,13 @@
 <li data-nav-id="/docs/app-developer-guide/using-project-descriptor/" class="dd-item depth-1">
   <a href="/docs/app-developer-guide/using-project-descriptor/">Using project.toml</a>
 </li>
+<li data-nav-id="/docs/app-developer-guide/using-inline-buildpacks/" class="dd-item depth-1">
+  <a href="/docs/app-developer-guide/using-inline-buildpacks/">Using Inline Buildpacks</a>
+</li>
   </ul>
 </li>
 <li data-nav-id="/docs/buildpack-author-guide/" class="dd-item depth-0 haschildren">
-  <a href="/docs/buildpack-author-guide/">Buildpack Author&rsquo;s Guide</a>
+  <a href="/docs/buildpack-author-guide/">Buildpack Author Guide</a>
   <ul class="ml-2">
 <li data-nav-id="/docs/buildpack-author-guide/create-buildpack/" class="dd-item depth-1 haschildren">
   <a href="/docs/buildpack-author-guide/create-buildpack/">Create a buildpack</a>
@@ -302,13 +313,26 @@
   </ul>
 </li>
 <li data-nav-id="/docs/operator-guide/" class="dd-item depth-0 haschildren">
-  <a href="/docs/operator-guide/">Operator&rsquo;s Guide</a>
+  <a href="/docs/operator-guide/">Operator Guide</a>
   <ul class="ml-2">
 <li data-nav-id="/docs/operator-guide/create-a-builder/" class="dd-item depth-1">
   <a href="/docs/operator-guide/create-a-builder/">Create a builder</a>
 </li>
 <li data-nav-id="/docs/operator-guide/create-a-stack/" class="dd-item depth-1">
   <a href="/docs/operator-guide/create-a-stack/">Create a stack</a>
+</li>
+  </ul>
+</li>
+<li data-nav-id="/docs/platform-guide/" class="dd-item depth-0 haschildren">
+  <a href="/docs/platform-guide/">Platform Guide</a>
+  <ul class="ml-2">
+<li data-nav-id="/docs/platform-guide/conventions/" class="dd-item depth-1 haschildren">
+  <a href="/docs/platform-guide/conventions/">Conventions</a>
+  <ul class="ml-2">
+<li data-nav-id="/docs/platform-guide/conventions/source-metadata/" class="dd-item depth-2 collapse">
+  <a href="/docs/platform-guide/conventions/source-metadata/">Source Metadata</a>
+</li>
+  </ul>
 </li>
   </ul>
 </li>
@@ -490,9 +514,6 @@
 </li>
   </ul>
 </li>
-<li data-nav-id="/docs/reference/reproducibility/" class="dd-item depth-1 collapse">
-  <a href="/docs/reference/reproducibility/">Reproducible Builds</a>
-</li>
 <li data-nav-id="/docs/reference/spec/" class="dd-item depth-1 collapse haschildren">
   <a href="/docs/reference/spec/">Specification</a>
   <ul class="ml-2">
@@ -597,10 +618,12 @@
       --lifecycle-image string      Custom lifecycle image to use for analysis, restore, and export when builder is untrusted.
       --network string              Connect detect and build containers to network
   -p, --path string                 Path to app dir or zip-formatted file (defaults to current working directory)
+      --previous-image string       Set previous image to a particular tag reference, digest reference, or (when performing a daemon build) image ID
       --publish                     Publish to registry
       --pull-policy string          Pull policy to use. Accepted values are always, never, and if-not-present. (default &quot;always&quot;)
       --run-image string            Run image (defaults to default stack's run image)
   -t, --tag strings                 Additional tags to push the output image to.
+                                    Tags should be in the format 'image:tag' or 'repository/image:tag'.
                                     Repeat for each tag in order, or supply once by comma-separated list
       --trust-builder               Trust the provided builder
                                     All lifecycle phases will be run in a single container (if supported by the lifecycle).
